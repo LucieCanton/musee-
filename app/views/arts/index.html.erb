@@ -1,52 +1,31 @@
-<body style="background-color: white; margin: 20% " >>
+<body>
 <p id="notice" ><%= notice %> 
 ></p>
 
-<div >
-<h1>Arts</h1>
+
+
+<div class="musee-wrapper">
+<h1>Le musée de l'amour</h1>
+<h2> Lucie CANTON </h2>
 <% @arts.each do |art| %>
 
-    <div class="card" style="width: 18rem; " >
-      <img src="<%= art.photo %>" class="card-img-top" alt="..." style="width: 50%">
+
+    <div class="card" >
+      <img src="<%= art.photo %>" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" ><%= art.tittle %></h5>
-        <p class="card-text"><%= art.author %></p>
-        <a href="#" class="btn btn-primary"><%= link_to 'Show', art %></a>
+        <h6 class="card-text"><%= art.author %></h6>
+        <h6 href="#" class="btn btn-primary"><%= link_to 'Show', art %></h6>
       </div>
     </div>
 
  <%end%>
  </div>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>Tittle</th>
-      <th>Author</th>
-      <th>Date</th>
-      <th>Photo</th>
-      <th>Dimensions</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @arts.each do |art| %>
-      <tr>
-        <td><%= art.tittle %></td>
-        <td><%= art.author %></td>
-        <td><%= art.date %></td>
-        <td><img src ="<%= art.photo %>" width ="200px"/></td>
-        <td><%= art.dimensions %></td>
-        <td><%= link_to 'Show', art %></td>
-        <td><%= link_to 'Edit', edit_art_path(art) %></td>
-        <td><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
 <%= link_to 'New Art', new_art_path %>
+
+</center>
 </body>
